@@ -28,15 +28,15 @@ Feel free to ask your NMEP friends if you don't know!
 
 ## -1.0 What is the difference between `torch.nn.Module` and `torch.nn.functional`?
 
-`YOUR ANSWER HERE`
+`Module is like an entire neural network with weights, and Functional is just a function like ReLU`
 
 ## -1.1 What is the difference between a Dataset and a DataLoader?
 
-`YOUR ANSWER HERE`
+`Dataset contains data and DataLoader loads it in the specified way`
 
 ## -1.2 What does `@torch.no_grad()` above a function header do?
 
-`YOUR ANSWER HERE`
+`That function will not change or track gradients.`
 
 
 
@@ -46,19 +46,19 @@ Read through `README.md` and follow the steps to understand how the repo is stru
 
 ## 0.0 What are the `build.py` files? Why do we have them?
 
-`YOUR ANSWER HERE`
+`The build files setup and initialize everything`
 
 ## 0.1 Where would you define a new model?
 
-`YOUR ANSWER HERE`
+`Make a new class in the models folder`
 
 ## 0.2 How would you add support for a new dataset? What files would you need to change?
 
-`YOUR ANSWER HERE`
+`Make a new class in datasets.py and add the build code in models/build.py`
 
 ## 0.3 Where is the actual training code?
 
-`YOUR ANSWER HERE`
+`main.py`
 
 ## 0.4 Create a diagram explaining the structure of `main.py` and the entire code repo.
 
@@ -76,37 +76,37 @@ The following questions relate to `data/build.py` and `data/datasets.py`.
 
 ### 1.0.0 What does `build_loader` do?
 
-`YOUR ANSWER HERE`
+`You input a config and it outputs datasets and data loaders`
 
 ### 1.0.1 What functions do you need to implement for a PyTorch Datset? (hint there are 3)
 
-`YOUR ANSWER HERE`
+`get_item, len, and transforms`
 
 ## 1.1 CIFAR10Dataset
 
 ### 1.1.0 Go through the constructor. What field actually contains the data? Do we need to download it ahead of time?
 
-`YOUR ANSWER HERE`
+`The self.dataset field stores the data. It downloads for us because its a torchvision library.`
 
 ### 1.1.1 What is `self.train`? What is `self.transform`?
 
-`YOUR ANSWER HERE`
+`self.train is a boolean saying whether or not the data is training data. self.transforms is the preprocessing and augmentation before the image is sent into the model`
 
 ### 1.1.2 What does `__getitem__` do? What is `index`?
 
-`YOUR ANSWER HERE`
+`getitem returns the sample in the dataset at the specified index`
 
 ### 1.1.3 What does `__len__` do?
 
-`YOUR ANSWER HERE`
+`returns how many data samples there are in the dataset`
 
 ### 1.1.4 What does `self._get_transforms` do? Why is there an if statement?
 
-`YOUR ANSWER HERE`
+`It returns the correct transform. There's an if because you only want to apply augmentations to training data`
 
 ### 1.1.5 What does `transforms.Normalize` do? What do the parameters mean? (hint: take a look here: https://pytorch.org/vision/main/generated/torchvision.transforms.Normalize.html)
-
-`YOUR ANSWER HERE`
+'
+`It normalizes the data to the mean and stdev in the parameters.`
 
 ## 1.2 MediumImagenetHDF5Dataset
 

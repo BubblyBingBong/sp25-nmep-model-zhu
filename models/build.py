@@ -1,5 +1,6 @@
 from .lenet import LeNet
-from .resnet import ResNet18
+from .resnet import ResNet18, ResNetDeep,ResNetDeep96x96
+from .alexnet import AlexNet
 
 
 def build_model(config):
@@ -11,6 +12,12 @@ def build_model(config):
         model = LeNet(num_classes=config.MODEL.NUM_CLASSES)
     elif model_type == 'resnet18':
         model = ResNet18(num_classes=config.MODEL.NUM_CLASSES)
+    elif model_type == 'resnetdeep':
+        model = ResNetDeep(num_classes=config.MODEL.NUM_CLASSES)
+    elif model_type == 'resnetdeep96x96':
+        model = ResNetDeep96x96(num_classes=config.MODEL.NUM_CLASSES)
+    elif model_type == 'alexnet':
+        model = AlexNet(num_classes=config.MODEL.NUM_CLASSES)
     # elif model_type == 'resnet34':
     #     model = ResNet34(num_classes=config.MODEL.NUM_CLASSES)
     # elif model_type == 'resnet50':

@@ -157,16 +157,16 @@ The following questions relate to `main.py`, and the configs in `configs/`.
 
 ## 3.0 What configs have we provided for you? What models and datasets do they train on?
 
-`YOUR ANSWER HERE`
+`Theres lenet and resnset configs all for cifar10`
 
 ## 3.1 Open `main.py` and go through `main()`. In bullet points, explain what the function does.
 
-`YOUR ANSWER HERE`
+`Train the model`
 
 ## 3.2 Go through `validate()` and `evaluate()`. What do they do? How are they different? 
 > Could we have done better by reusing code? Yes. Yes we could have but we didn't... sorry...
 
-`YOUR ANSWER HERE`
+`They are for getting validation and test loss`
 
 
 # Part 4: AlexNet
@@ -197,7 +197,7 @@ Linear with num_classes output units
 ## 4.1 How many parameters does AlexNet have? How does it compare to LeNet? With the same batch size, how much memory do LeNet and AlexNet take up while training? 
 > (hint: use `gpuststat`)
 
-`YOUR ANSWER HERE`
+`Alexnet: 57.82M params, 1456MB memory. Lenet: 99.28K params, 272MB memory`
 
 ## 4.2 Train AlexNet on CIFAR10. What accuracy do you get?
 
@@ -206,7 +206,7 @@ Report training and validation accuracy on AlexNet and LeNet. Report hyperparame
 > You can just copy the config file, don't need to write it all out again.
 > Also no need to tune the models much, you'll do it in the next part.
 
-`YOUR ANSWER HERE`
+`77.62%`
 
 
 

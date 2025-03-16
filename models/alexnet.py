@@ -3,7 +3,7 @@ from torch import nn
 
 
 class AlexNet(nn.Module):
-    def __init__(self, num_classes: int = 10, img_size: int = 70) -> None:
+    def __init__(self, num_classes: int = 10) -> None:
         super().__init__()
         self.features = nn.Sequential(
             nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2),
@@ -25,7 +25,7 @@ class AlexNet(nn.Module):
         )
         self.classifier = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(9999, 4096),
+            nn.Linear(9216, 4096),
             nn.ReLU(),
             nn.Dropout(0.5),
             nn.Linear(4096, 4096),
